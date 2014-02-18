@@ -1,16 +1,11 @@
 {
   "name": "frontgame",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "description": "game for frontend",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "123"
-  ],
   "author": "Igor",
   "license": "ISC",
+
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-connect": "~0.6.0",

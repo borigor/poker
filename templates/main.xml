@@ -1,3 +1,4 @@
+<<<<<<< HEAD
             <fest:template xmlns:fest="http://fest.mail.ru"
                 context_name="json">
                 <div>
@@ -11,3 +12,7 @@
 
             </fest:template>
         
+=======
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+</fest:template>
+>>>>>>> tp/v2
