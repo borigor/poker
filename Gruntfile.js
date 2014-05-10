@@ -46,12 +46,24 @@ module.exports = function (grunt) {
                     }
                 }
             }
+        },
+        sass: {
+            css: {
+                files: [{
+                    expand: true,
+                    cwd: 'public/css',
+                    src: '*.scss',
+                    dest: 'public/css',
+                    ext: '.css'
+                }]
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-fest');
+    grunt.loadNpmTasks('grunt-contrib-sass');
 
     grunt.registerTask('default', ['connect', 'watch']);
 

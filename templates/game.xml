@@ -1,6 +1,11 @@
 <fest:template xmlns:fest="http://fest.mail.ru"
     context_name="json">
-    <div>
-        <a href="#" class="js-back button">&#9664; Back</a>
-    </div>
+
+    <div id="game-div">
+
+	    <a href="#" class="js-back button">&#9664; Back</a>
+	    <div class="background"></div>
+
+	</div>
+
 </fest:template>

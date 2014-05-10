@@ -3,8 +3,7 @@ define([
     'tmpl/main'
 ], function(
     Backbone,
-    tmpl,
-    models
+    tmpl
 ){
 
     var View = Backbone.View.extend({
@@ -15,10 +14,10 @@ define([
             console.log("Main View is working");
         },
         render: function () {
-            // TODO
+            this.$el.html(this.template);
         },
         show: function () {
-            this.$el.html(this.template);
+            this.render();
         },
         hide: function () {
             // TODO

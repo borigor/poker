@@ -1,42 +1,45 @@
 <fest:template xmlns:fest="http://fest.mail.ru"
   context_name="json">
-  
 
-  <div class="header">
-    <h1 class="header__title">Epic game</h1>
-    <h2 class="header__current">Score board</h2>
-  </div>
+    <div id="scoreboard-div">
 
-  <div>
-    <div class="scoreboard">
-      <div class="scoreboard__header">
-        <h2> # </h2>
-      </div>
-      <div class="scoreboard__header">
-        <h2>Name</h2>
-      </div>
-      <div class="scoreboard__header">
-        <h2>Score</h2>
-      </div>
+    <div class="header">
+      <h1 class="header__title">Epic game</h1>
+      <h2 class="header__current">Score board</h2>
     </div>
 
-    <fest:for iterate="json.scoreboard" index="i">
-
-      <div class="scoreboard">
-        <div class="scoreboard__content">
-          <fest:value>i + 1</fest:value>
+    <div>
+      <div class="scoreboard-title">
+        <div class="scoreboard-title__header">
+          <h3> # </h3>
         </div>
-        <div class="scoreboard__content">
-          <fest:value>json.scoreboard[i].get('name')</fest:value>
+        <div class="scoreboard-title__header">
+          <h3>Name</h3>
         </div>
-        <div class="scoreboard__content">
-          <fest:value>json.scoreboard[i].get('score')</fest:value>
+        <div class="scoreboard-title__header">
+          <h3>Score</h3>
         </div>
       </div>
 
-    </fest:for>
+      <fest:for iterate="json.scoreboard" index="i">
 
-    <a href="#" class="js-back button">&#9664; Back</a>
+        <div class="scoreboard">
+          <div class="scoreboard__content">
+            <fest:value>i + 1</fest:value>
+          </div>
+          <div class="scoreboard__content">
+            <fest:value>json.scoreboard[i].get('name')</fest:value>
+          </div>
+          <div class="scoreboard__content">
+            <fest:value>json.scoreboard[i].get('score')</fest:value>
+          </div>
+        </div>
+
+      </fest:for>
+
+      <a href="#" class="js-back button">&#9664; Back</a>
+
+    </div>
 
   </div>
 
