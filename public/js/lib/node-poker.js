@@ -161,6 +161,15 @@ function Progress(table){
 			table.game.board[i] = table.game.deck.pop();
 		};
 	};
+
+	if(table.game.round.roundName == "Deal"){
+		table.game.round = new Round("Flop");
+		table.game.deck.pop //Burn a card
+		for(i=0;i<3;i++){
+			table.game.board[i] = table.game.deck.pop();
+		};
+	};
+
 };
 
 function GetMaxBet(bets){
