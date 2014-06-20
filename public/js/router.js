@@ -1,8 +1,10 @@
-define(['backbone',
- 'views/main',
- 'views/scoreboard',
- 'views/game'
-], function(Backbone,
+define([
+    'backbone',
+    'views/main',
+    'views/scoreboard',
+    'views/game'
+], function(
+    Backbone,
     mainScreen,
     scoreboardScreen,
     gameScreen

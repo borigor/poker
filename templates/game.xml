@@ -2,9 +2,12 @@
     context_name="json">
 
     <div id="game-div">
-
-	    <a href="#" class="js-back button">&#9664; Back</a>
-	    <div class="background"></div>
+    	
+    	<a href="#" class="js-back button">&#9664; Back</a>
+    	
+	    <div id="canvas-div">
+	    	<canvas id="draw-table" class="game-screen__canvas"> Update your browser</canvas>"
+	    </div>
 
 	</div>
 

@@ -1,8 +1,12 @@
 define([
     'backbone',
+    'mechanics',
+    'lib/node-poker',
     'tmpl/game'
 ], function(
     Backbone,
+    Mechanics,
+    Poker,
     tmpl
 ){
 
@@ -18,11 +22,13 @@ define([
         },
         show: function () {
             this.render();
+            Mechanics.game();
+
+            
         },
         hide: function () {
             // TODO
         }
-
     });
 
     return new View();

@@ -87,7 +87,7 @@ table {
     text-transform: uppercase;
 }
 
-.main-menu__element__button {
+.main-menu__button {
     color: rgb(255, 255, 255);
     display: block;
     font-size: 18px;
@@ -96,22 +96,34 @@ table {
     width: 180px;
 }
 
-.main-menu__element__button:hover {
+.main-menu__button:hover {
     background-color: rgb(71, 77, 68);
 }
 
 /* Main menu (end) */
 
-/* Headers (begin) */
-/
-h1, h2 {
+.js-back {
+    display: block;
+    margin: 15px;
+    text-decoration: none;
+    width: 80px;
+    float: left;
+}
+
+.js-back:hover {
+    background-color: rgb(71, 77, 68);
+}
+
+.header {}
+
+.header__current, .header__title {
     margin: 15px auto;
     overflow: hidden;
     text-align: center;
     text-transform: uppercase;
 }
 
-h1 {
+.header__title {
     background-color: rgb(96, 96, 96);
     color: white;
     font-size: 36px;
@@ -120,53 +132,62 @@ h1 {
     width: 470px;
 }
 
-h2 {
+.header__current {
     color: rgb(96, 96, 96);
     font-size: 24px;
     margin: 50px 0 20px 0;
 }
-/* Headers (end) */
-
-
-.js-back {
-    display: block;
-    margin: 15px;
-    text-decoration: none;
-    width: 80px;
-}
-
-.js-back:hover {
-    background-color: rgb(71, 77, 68);
-}
-
-.header {
-    
-}
-
-.header__title {
-
-}
-
-.header__current {
-   
-}
 
 .scoreboard {
-    width: 100%;
     display: table;
     table-layout: fixed;
+    margin-bottom: 5px;
+    width: 100%;
 }
-.scoreboard__header {
+
+.scoreboard-title {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.scoreboard-title__header {
+
     display: table-cell;
+    color: rgb(96, 96, 96);
+    font-size: 20px;
+    margin: 15px auto;
+    overflow: hidden;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .scoreboard__content {
     color: rgb(96, 96, 96);
     display: table-cell;
-    font-size: 18px;
-    margin: 15px auto;
+    font-size: 16px;
     margin: 50px 0 20px 0;
     overflow: hidden;
     text-align: center;
     text-transform: uppercase;
+}
+
+/* for testing. */
+.background {
+    width: 500px;
+    height: 600px;
+    background: url("../i/screen.jpg") no-repeat;
+    background-size: 500px 600px;
+}
+
+#main-div {
+    display: block;
+}
+
+#game-div {
+    display: block;
+}
+
+#scoreboard-div {
+    display: block;
 }
