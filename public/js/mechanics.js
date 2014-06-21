@@ -1,93 +1,119 @@
 define([
-	'backbone',
-      'node-poker'
+  'backbone',  'pokerface'
 ], function(
-	Backbone,
-      Poker
+  Backbone,
+  Poker
 ){
 
-	var mechanics = Backbone.View.extend({
+  var mechanics = Backbone.View.extend({
 
-		game: function(){
+    game: function(){
 
-			console.log('game start');
+      var act;
 
-			var canvas = document.getElementById("draw-table");
-                  console.log(canvas);
-			context = canvas.getContext('2d');
-                  context.font = "10pt Arial";
+      function addPlayerOnBtn(str) {
+        $(str).click(function() {
+          console.log(table);
+          console.log(table.game);
+          if (name = prompt('Введите имя игрока', 'name')) {
+            table.AddPlayer(name, 800);
+          }
+          if (table.players.length >= table.minPlayers) {
+            table.StartGame();
+          };
+          console.log(table);
+          console.log(table.game);
+          console.log(table.players[0]);
+          console.log(table.players[1]);
+          if (table.game) {
+            alert('Game Start!');
+            gameStart();
+          }
+        });
+      }
 
-                  canvas.width  = 450;
-                  canvas.height = 450;
+      function betOnBtn(str, num) {
+        $(str).click(function() {
+          if (betValue = prompt('введит сколько вы хотите поставить', 'bet')) {
+            table.players[num].Bet(betValue);
+          }
+          console.log('bet = ' + betValue);
+          act = 'bet';
+        });
+      }
+
+      function foldOnBtn(str, num) {
+        $(str).click(function() {
+          table.players[num].Fold();
+          console.log('fold');
+          act = 'fold';
+        });
+      }
+
+      function callOnBtn(str, num) {
+        $(str).click(function() {
+          table.players[num].Call();
+          console.log('call');
+          act = 'call';
+        });
+      }
+
+      function checkOnBtn(str, num) {
+        $(str).click(function() {
+          table.players[num].Check();
+          console.log('check');
+          act = 'check';
+        });        
+      }
+
+      function actionPlayer2() {
+        callOnBtn('#call_2p', 1);
+        betOnBtn('#bet_2p', 1);
+        foldOnBtn('#fold_2p', 1);
+        checkOnBtn('#check_2p', 1);
+
+        console.log(table.game);
+      }
+
+      function actionPlayer1() {
+        callOnBtn('#call_1p', 0);
+        betOnBtn('#bet_1p', 0);
+        foldOnBtn('#fold_1p', 0);
+        checkOnBtn('#check_1p', 0);
+
+        console.log(table.game);
+      }
+
+      var table = new Poker.Table(50,100,2,10,100,1000);
+
+      addPlayerOnBtn('#add_1p');
+      addPlayerOnBtn('#add_2p');
 
 
-                  context.strokeRect(10, 10, 430, 430);
+      function gameStart () {
+        console.log('func gameStart');
 
-                  context.strokeRect(50, 100, 50, 70);
-                  context.strokeRect(120, 100, 50, 70);
-                  context.strokeRect(190, 100, 50, 70);
-                  context.strokeRect(260, 100, 50, 70);
-                  context.strokeRect(330, 100, 50, 70);
+        alert(table.game.roundName);
+        console.log(table.game.roundName);
 
-                  context.strokeRect(50, 250, 50, 70);
-                  context.strokeRect(120, 250, 50, 70);
-                  context.strokeRect(260, 250, 50, 70);
-                  context.strokeRect(330, 250, 50, 70);
-
-                  
-                  var table = new Poker.Table(10,20,2,10,'table_1',100,1000);
-                   /*     
-                  if(name_1 = prompt('Введите имя, игрок 1', 'имя')) {
-                        table.AddPlayer(name_1, 1000);
-                  }
-                        
-                  if(name_2 = prompt('Введите имя, игрок 2', 'имя')) {
-                        table.AddPlayer(name_2, 1000);
-                  }
-                  */
-
-                  table.AddPlayer('bob', 1000);
-                  table.AddPlayer('bill', 1000);
-
-                  if (table.players.length !== 2) {
-                        alert('Не хватает игроков');
-                  } else {
-                        alert('Игра начинается!');
-
-                        context.fillText(table.players[0].playerName, 90, 240);
-                        context.fillText(table.players[0].cards[0], 65, 290);
-                        context.fillText(table.players[0].cards[1], 135, 290);
-
-                        context.fillText(table.players[1].playerName, 300, 240);
-                        context.fillText(table.players[1].cards[0], 275, 290);
-                        context.fillText(table.players[1].cards[1], 345, 290);
-
-                        console.log(table.game.round.roundName);
-                        alert(table.game.round.roundName);
-
-                        table.players[0].Call();
-
-                        console.log(table.game.round.roundName);
-                        alert(table.game.round.roundName);
-
-                        context.fillText(table.game.board[0], 65, 140);
-                        context.fillText(table.game.board[1], 135, 140);
-                        context.fillText(table.game.board[2], 205, 140);
-
-                        table.players[0].Call();
-
-                        console.log(table.game.round.roundName);
-                        alert(table.game.round.roundName);
-
-                        console.log(table.players[0]);
-                        console.log(table.players[1]);
-                        
-                  }
-
-
-	            console.log('game end');
+        console.log('cards on table:');
+        console.log(table.game.board);
+        
+        console.log('blinds:')
+        for (var i = 0; i < table.game.bets.length; i++) {
+          console.log(table.game.bets[i]);
         }
 
-	});
-	return new mechanics();
-})
+        alert('players 2, your move');
+        actionPlayer2;
+        alert('players 1, your move');
+
+
+        console.log(table.game);
+      }
+
+    }
+
+  });
+  return new mechanics();
+});

@@ -1,13 +1,11 @@
 define([
     'backbone',
-    'mechanics',
-    'lib/node-poker',
-    'tmpl/game'
+    'tmpl/game',
+    'mechanics'
 ], function(
     Backbone,
-    Mechanics,
-    Poker,
-    tmpl
+    tmpl,
+    mechanics
 ){
 
     var View = Backbone.View.extend({
@@ -22,13 +20,12 @@ define([
         },
         show: function () {
             this.render();
-            Mechanics.game();
-
-            
+            mechanics.game();
         },
         hide: function () {
             // TODO
         }
+
     });
 
     return new View();

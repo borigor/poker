@@ -2,12 +2,24 @@
     context_name="json">
 
     <div id="game-div">
+
+   		<a href="#" class="js-back button">&#9664; Back</a>
     	
-    	<a href="#" class="js-back button">&#9664; Back</a>
-    	
-	    <div id="canvas-div">
-	    	<canvas id="draw-table" class="game-screen__canvas"> Update your browser</canvas>"
-	    </div>
+    	<div id="1_pl">
+	    	<button id='add_1p'> Add 1 player </button>
+		    <button id='bet_1p'> Bet 1 player </button>
+		    <button id='fold_1p'> Fold 1 player </button>
+		    <button id='call_1p'> Call 1 player </button>
+		    <button id='check_1p'> Check 1 player </button>
+		</div>
+
+		<div id="2_pl">
+		    <button id='add_2p'> Add 2 player </button>
+		    <button id='bet_2p'> Bet 2 player </button>
+		    <button id='fold_2p'> Fold 2 player </button>
+		    <button id='call_2p'> Call 2 player </button>
+		    <button id='check_2p'> Check 2 player </button>
+		</div>
 
 	</div>
 

@@ -171,23 +171,3 @@ table {
     text-align: center;
     text-transform: uppercase;
 }
-
-/* for testing. */
-.background {
-    width: 500px;
-    height: 600px;
-    background: url("../i/screen.jpg") no-repeat;
-    background-size: 500px 600px;
-}
-
-#main-div {
-    display: block;
-}
-
-#game-div {
-    display: block;
-}
-
-#scoreboard-div {
-    display: block;
-}

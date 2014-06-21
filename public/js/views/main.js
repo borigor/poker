@@ -22,6 +22,7 @@ define([
         hide: function () {
             // TODO
         }
+
     });
 
     return new View();
